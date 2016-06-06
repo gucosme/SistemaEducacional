@@ -9,9 +9,8 @@ public class Disciplinas {
 	private List<Disciplina> disciplinas;
 	
 	public List<Disciplina> getDisciplinas() throws SQLException {
-		if (disciplinas == null) {
+		if (disciplinas == null)
 			disciplinas = new daoDisciplinas().getDisciplinas();
-		}
 		
 		return disciplinas;
 	}

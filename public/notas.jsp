@@ -24,10 +24,24 @@
 					<c:if test="${disciplina.turno == 'M'.charAt(0) }">
 						<small>Manhã</small>
 					</c:if>
+					<form action="index" method="post" class="pull-right">
+						<input class="hidden" name="codigo" value="${disciplina.codigo }" />
+						<input class="hidden" name="nome" value="${disciplina.nome }" />
+						<input class="hidden" name="sigla" value="${disciplina.sigla }" />
+						<input class="hidden" name="turno" value="${disciplina.turno }" />
+						<input class="hidden" name="num_aulas"
+							value="${disciplina.num_aulas }" />
+						<button type="submit" class="btn btn-primary" name="btn"
+							value="faltas">Faltas</button>
+					</form>
 				</h3>
 			</div>
 			<div class="panel-body">
-				<input placeholder="lala" class="form-control" />
+				<form action="nota" method="post">
+					<div class="input-group">
+						
+					</div>
+				</form>
 			</div>
 			<div class="table-responsive">
 				<table class="table table-hover">
@@ -36,7 +50,9 @@
 						<th>Aluno</th>
 						<th>P1</th>
 						<th>P2</th>
-						<c:if test="true"><th>P3</th></c:if>
+						<c:if test="true">
+							<th>P3</th>
+						</c:if>
 						<th>T</th>
 						<th>Exame</th>
 					</tr>

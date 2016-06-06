@@ -24,11 +24,11 @@
 				<div class="col-sm-6 col-md-6">
 					<div class="thumbnail">
 						<form method="post" action="index">
-							<input style="display:none" name="codigo" value="${disciplina.codigo }" />
-							<input style="display:none" name="nome" value="${disciplina.nome }" />
-							<input style="display:none" name="sigla" value="${disciplina.sigla }" />
-							<input style="display:none" name="turno" value="${disciplina.turno }" />
-							<input style="display:none" name="num_aulas" value="${disciplina.num_aulas }" />
+							<input class="hidden" name="codigo" value="${disciplina.codigo }" />
+							<input class="hidden" name="nome" value="${disciplina.nome }" />
+							<input class="hidden" name="sigla" value="${disciplina.sigla }" />
+							<input class="hidden" name="turno" value="${disciplina.turno }" />
+							<input class="hidden" name="num_aulas" value="${disciplina.num_aulas }" />
 							
 							<div class="jumbotron conteiner">
 								<h1>${disciplina.sigla}
