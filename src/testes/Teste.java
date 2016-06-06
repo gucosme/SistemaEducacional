@@ -3,13 +3,18 @@ package testes;
 import java.sql.SQLException;
 import java.util.List;
 
+import model.Aluno;
+import model.Alunos;
 import model.Disciplina;
 import persistence.daoDisciplinas;
 
 public class Teste {
 	public static void main(String[] args) throws SQLException {
-		List<Disciplina> lista = new daoDisciplinas().getDisciplinas();
+//		List<Disciplina> lista = new daoDisciplinas().getDisciplinas();
+//		
+//		for(Disciplina d: lista) System.out.println(d.getTurno() + ": " + d.getSigla());
 		
-		for(Disciplina d: lista) System.out.println(d.getTurno() + ": " + d.getSigla());
+		List<Aluno> lista = new Alunos().getAlunos();
+		System.out.println(lista.get(0).getNome());
 	}
 }

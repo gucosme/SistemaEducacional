@@ -39,6 +39,7 @@ public class daoDisciplinas implements iDisciplina{
 			
 			disciplinas.add(disciplina);
 		}
+		
 		return disciplinas;
 	}
 }
