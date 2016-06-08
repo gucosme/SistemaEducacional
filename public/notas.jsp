@@ -11,7 +11,44 @@
 <title>Notas</title>
 </head>
 <body>
-	<c:import url="header.jsp" />
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target=".navbar-collapse"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/app"> <span
+					class="glyphicon glyphicon-education" aria-hidden="true"></span>
+					Sistema Educacional
+				</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<c:if test="${sessionScope.logado eq true }">
+					<p class="navbar-text">Logado como ${sessionScope.usuario }</p>
+
+					<ul class="nav navbar-nav">
+						<li><a href="#">Inserir Notas</a></li>
+						<li><a href="#">Inserir Faltas</a></li>
+					</ul>
+
+					<form class="navbar-form navbar-right" action="login" method="post">
+						<button type="submit" class="btn btn-default" name="btn"
+							value="sair">Sair</button>
+					</form>
+				</c:if>
+
+				<c:if
+					test="${sessionScope.logado eq null or sessionScope.logado eq false }">
+
+					<c:import url="formLogin.jsp" />
+
+				</c:if>
+			</div>
+		</div>
+	</nav>
 	<div class="conteiner">
 		<div class="panel panel-default" id="notas">
 			<div class="panel-heading">
@@ -45,7 +82,7 @@
 						<div class="input-group">
 							<input class="form-control search" placeholder="Pesquise aqui"
 								type="text" />
-							<div class="input-group-btn">
+							<div class="input-group-btn ">
 								<button class="btn btn-success">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>

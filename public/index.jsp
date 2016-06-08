@@ -5,18 +5,49 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<c:import url="links.jsp" />
 <title>Início</title>
-
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/conteiner.css">
 <body>
-	<c:import url="header.jsp" />
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target=".navbar-collapse"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/app"> <span
+					class="glyphicon glyphicon-education" aria-hidden="true"></span>
+					Sistema Educacional
+				</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<c:if test="${sessionScope.logado eq true }">
+					<p class="navbar-text">Logado como ${sessionScope.usuario }</p>
+					
+					<ul class="nav navbar-nav">
+						<li><a href="#">Inserir Notas</a></li>
+						<li><a href="#">Inserir Faltas</a></li>
+					</ul>
+					
+					<form class="navbar-form navbar-right" action="login" method="post">
+						<button type="submit" class="btn btn-default" name="btn"
+							value="sair">Sair</button>
+					</form>
+				</c:if>
+
+				<c:if test="${sessionScope.logado eq null or sessionScope.logado eq false }">
+
+					<c:import url="formLogin.jsp" />
+
+				</c:if>
+			</div>
+		</div>
+	</nav>
 
 	<div class="conteiner">
 		<div class="row">
@@ -28,8 +59,9 @@
 							<input class="hidden" name="nome" value="${disciplina.nome }" />
 							<input class="hidden" name="sigla" value="${disciplina.sigla }" />
 							<input class="hidden" name="turno" value="${disciplina.turno }" />
-							<input class="hidden" name="num_aulas" value="${disciplina.num_aulas }" />
-							
+							<input class="hidden" name="num_aulas"
+								value="${disciplina.num_aulas }" />
+
 							<div class="jumbotron conteiner">
 								<h1>${disciplina.sigla}
 									<small>${disciplina.codigo} ${disciplina.turno}</small>

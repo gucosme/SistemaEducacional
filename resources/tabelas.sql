@@ -53,3 +53,6 @@ TABLE faltas(
 	FOREIGN KEY (codigo_disciplina) REFERENCES disciplina (codigo),
 	PRIMARY KEY(ra_aluno, codigo_disciplina, data)
 )
+
+
+SELECT * FROM disciplina
