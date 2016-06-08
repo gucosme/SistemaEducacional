@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Aluno;
-import model.Disciplina;
 
 public class daoAluno implements iAluno{
 	

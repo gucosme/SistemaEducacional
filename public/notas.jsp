@@ -30,8 +30,8 @@
 					<p class="navbar-text">Logado como ${sessionScope.usuario }</p>
 
 					<ul class="nav navbar-nav">
-						<li><a href="#">Inserir Notas</a></li>
-						<li><a href="#">Inserir Faltas</a></li>
+						<li><a href="insereNota.jsp">Inserir Notas</a></li>
+						<li><a href="insereFalta.jsp">Inserir Faltas</a></li>
 					</ul>
 
 					<form class="navbar-form navbar-right" action="login" method="post">

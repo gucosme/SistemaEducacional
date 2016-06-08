@@ -5,8 +5,6 @@ import java.util.List;
 
 import model.Aluno;
 import model.Alunos;
-import model.Disciplina;
-import persistence.daoDisciplinas;
 
 public class Teste {
 	public static void main(String[] args) throws SQLException {
